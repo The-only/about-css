@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>inlineblock-layout</title>
+	<!--[if lte IE 8]>
+	<script src="html5.js"></script>
+	<![endif]-->
+	<style>
+	html,body{
+		margin:0;
+		font:14px/5 arial,simsun;
+		text-align:center;
+	}
+    header,section,aside,footer{
+    	display:block;
+    }
+    #hd,#bd,#ft{
+    	width:960px;
+    	margin:auto;
+    }
+    #bd{
+    	position:relative;
+    	/*解决各浏览器水平间隙问题*/
+    	font-size:0; /*所有浏览器*/
+    	*font-size:0;
+    	font-family:arial;
+    	/*Safari 等不支持字体大小为 0 的浏览器*/
+    	[;letter-spacing:-3px;];
+    	*letter-spacing:normal;
+    	*word-spacing:-1px; /*IE6、7*/
+    }
+    #main,#aside{
+    	display:inline-block;
+    	/* IE6、7 block 元素 */
+    	*display:inline;
+    	*zoom:1;
+    	margin:0 5px;
+    	/*防止继承父元素字体样式*/
+    	font-size:14px;
+    	letter-spacing:normal;
+    	word-spacing:normal;
+    }
+    #main{
+    	width:710px;
+    	background:#ccc;
+    }
+    #aside{
+    	width:230px;
+    	background:#ccc;
+    }
+   .mod-head, .mod-rights{
+    	margin: 0 5px;
+    	background: #aaa;
+   }
+	</style>
+</head>
+<body>
+	<header id="hd">
+		<section class="mod-head">头部</section>
+	</header>
+	<section id="bd">
+	    <section id="main">
+			<section class="mod-ent">正文模块1</section>
+			<section class="mod-news">正文模块2</section>
+			<section class="mod-cook">正文模块3</section>
+		</section>
+		<aside id="aside">
+			<section class="mod-nav">侧边模块1</section>
+			<section class="mod-info">侧边模块2</section>
+			<section class="mod-other">侧边模块3</section>
+		</aside>
+	</section>
+	<footer id="ft">
+		<section class="mod-rights">版权模块</section>
+	</footer>
+</body>
+</html>
